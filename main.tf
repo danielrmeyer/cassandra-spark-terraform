@@ -62,8 +62,8 @@ resource "aws_route_table_association" "a" {
 }
 
 resource "aws_security_group" "cassandra" {
-  name = "db_security_group"
-  description = "Security group for db"
+  name = "cassandra_security_group"
+  description = "Security group for cassandra"
   vpc_id = "${var.vpc_id}"
 
   tags {
@@ -129,6 +129,13 @@ resource "aws_security_group" "spark" {
 
   tags {
     Name = "${var.user_name}"
+  }
+
+  ingress {
+    from_port = 4040
+    to_port = 4040
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
