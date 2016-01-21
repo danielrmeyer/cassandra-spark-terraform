@@ -10,6 +10,14 @@ ssh_key_name = "keyname"
 vpc_id = "vpc-########"
 ```
 
+Once you have created the above file (please read up on EC2 and terraform docs):
+```bash
+terraform plan
+```
+If the plan looks good:
+```bash
+terraform apply
+```
 
 Once the instance has been provisioned, ssh into it and run the following:
 
