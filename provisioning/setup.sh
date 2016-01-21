@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get install gcc libev4 libev-dev python-dev
+sudo apt-get install -y gcc libev4 libev-dev python-dev
 sudo pip install cassandra-driver
 
 #Download scala and install it
@@ -13,7 +13,7 @@ tar -xvf spark-1.5.2-bin-hadoop2.6.tgz
 
 cat <<EOF > run_spark.sh
 #!/bin/bash
-/home/ubuntu/bin/spark-shell --packages com.datastax.spark:spark-cassandra-connector_2.10:1.5.0-M3
+/home/ubuntu/spark-1.5.2-bin-hadoop2.6/bin/spark-shell --packages com.datastax.spark:spark-cassandra-connector_2.10:1.5.0-M3
 EOF
 
 chmod +x run_spark.sh
